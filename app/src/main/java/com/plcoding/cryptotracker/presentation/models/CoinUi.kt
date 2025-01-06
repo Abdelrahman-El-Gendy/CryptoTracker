@@ -19,11 +19,13 @@ data class CoinUi(
 
 )
 
+// The Data Type for the marketCapUsd , priceUsd , changePercentUsd
 data class DisplayableNumber(
     val value: Double,
     val formated: String
 )
 
+// Extension Function
 fun Coin.toCoinUi(): CoinUi {
     return CoinUi(
         id = id,
@@ -40,7 +42,7 @@ fun Coin.toCoinUi(): CoinUi {
 fun Double.toDisplayableNumber(): DisplayableNumber {
     val formatter = NumberFormat.getNumberInstance(Locale.getDefault()).apply {
         minimumFractionDigits = 2
-        maximumIntegerDigits = 2
+        maximumFractionDigits = 2
     }
     return DisplayableNumber(value = this, formated = formatter.format(this))
 }
