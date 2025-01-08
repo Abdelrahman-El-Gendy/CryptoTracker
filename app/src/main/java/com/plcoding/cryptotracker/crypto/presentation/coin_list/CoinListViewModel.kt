@@ -53,7 +53,7 @@ class CoinListViewModel(
                         )
                     }
                 }
-                .onError {
+                .onError { error ->
                     _state.update {
                         it.copy(
                             isLoading = false

@@ -8,7 +8,7 @@ import java.util.Locale
 
 data class CoinUi(
     val id: String,
-    val rank: String,
+    val rank: Int,
     val name: String,
     val symbol: String,
     val marketCapUsd: DisplayableNumber,
@@ -29,8 +29,8 @@ fun Coin.toCoinUi(): CoinUi {
     return CoinUi(
         id = id,
         name = name,
-        rank = rank,
         symbol = symbol,
+        rank = rank,
         marketCapUsd = marketCapUsd.toDisplayableNumber(),
         changePercent24H = changePercent24H.toDisplayableNumber(),
         priceUsd = priceUsd.toDisplayableNumber(),
