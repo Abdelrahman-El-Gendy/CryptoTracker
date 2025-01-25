@@ -24,7 +24,6 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.plcoding.cryptotracker.crypto.domain.Coin
-import com.plcoding.cryptotracker.crypto.presentation.coin_list.components.PriceChange
 import com.plcoding.cryptotracker.crypto.presentation.models.CoinUi
 import com.plcoding.cryptotracker.crypto.presentation.models.toCoinUi
 import com.plcoding.cryptotracker.ui.theme.CryptoTrackerTheme
@@ -73,14 +72,14 @@ fun CoinListItem(
             horizontalAlignment = Alignment.End
         ) {
             Text(
-                text = "$ ${coinUi.priceUsd.formated}",
+                text = "$ ${coinUi.priceUsd.formatted}",
                 fontSize = 16.sp,
                 fontWeight = FontWeight.SemiBold,
                 color = contentColor
             )
             Spacer(modifier = Modifier.height(8.dp))
             PriceChange(
-                change = coinUi.changePercent24H
+                change = coinUi.changePercent24Hr
             )
         }
     }
@@ -107,5 +106,5 @@ internal val previewCoin = Coin(
     symbol = "BTC",
     marketCapUsd = 1241273958896.75,
     priceUsd = 62828.15,
-    changePercent24H = -0.1
+    changePercent24Hr = 0.1
 ).toCoinUi()
